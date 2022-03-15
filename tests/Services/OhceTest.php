@@ -18,6 +18,16 @@ final class OhceTest extends TestCase
         $name = "Rubén";
         $morningHour = mktime(10, 10);
         $morningHour = date('H:i', $morningHour);
-        self::assertEquals("Buenos días $name", $ohce->greet($name));
+        self::assertEquals("Buenos días $name", $ohce->greet($name, $morningHour));
+    }
+    /**
+     * @test
+     */
+    function greet_in_the_afternoon_should_return_buenas_tardes(){
+        $ohce = new Ohce();
+        $name = "Rubén";
+        $afternoonHour = mktime(16, 10);
+        $afternoonHour = date('H:i', $afternoonHour);
+        self::assertEquals("Buenas tardes $name", $ohce->greet($name, $afternoonHour));
     }
 }
