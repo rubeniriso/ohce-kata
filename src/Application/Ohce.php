@@ -11,5 +11,9 @@ class Ohce
             return "Buenas tardes $name";
         else
             return "Buenas noches $name";
+
+    }
+    function execute($string){
+        return strrev($string);
     }
 }
